@@ -25,7 +25,7 @@ public class GunController : VRTK_InteractableObject {
 			gunRig = shootBullet.GetComponent<Rigidbody> ();
 			VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(usingObject.gameObject), 1.0f );
 			gunRig.AddForce (transform.forward * speed);
-			Destroy (shootBullet, 10.0f);sssssss
+			Destroy (shootBullet, 10.0f);
 		}
 	}
 }
