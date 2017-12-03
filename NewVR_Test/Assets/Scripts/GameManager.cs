@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
 				btnText.color = Color.Lerp (btnText.color, Color.red, fadeInTime * Time.deltaTime);
 			} else {
 				btnText.color = Color.Lerp (btnText.color, Color.clear, fadeInTime * Time.deltaTime);
-			}
+			}ewqewqeqwq
 
 
 
