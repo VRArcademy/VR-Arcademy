@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 		public float fadeInTime;
 		public float dist;
 		public Transform Player;
+		public GameObject hihi;
 
 		public int score = 0;
 		public Text scoretxt;
