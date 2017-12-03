@@ -15,6 +15,8 @@
 		private float randY;
 		private float spawnRate = 1.5f;
 
+		public GameObject test;
+
 		public override void StartUsing(VRTK_InteractUse usingObject){
 			base.StartUsing ();
 			StartGame ();
