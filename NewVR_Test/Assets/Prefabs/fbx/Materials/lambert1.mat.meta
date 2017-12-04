@@ -1,11 +1,24 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
 guid: 34252c930c3e4ac4cad71d574ee72180
 timeCreated: 1512306810
+=======
+<<<<<<< HEAD
+guid: c83e1f33b52e36743995a0182674a861
+timeCreated: 1512307859
+>>>>>>> Sing
 =======
 guid: f4d1eefa041c22249816ac0b82dcc4da
 timeCreated: 1512306052
 >>>>>>> master
+<<<<<<< HEAD
+=======
+=======
+guid: f4d1eefa041c22249816ac0b82dcc4da
+timeCreated: 1512306052
+>>>>>>> master
+>>>>>>> Sing
 licenseType: Free
 NativeFormatImporter:
   mainObjectFileID: 2100000
