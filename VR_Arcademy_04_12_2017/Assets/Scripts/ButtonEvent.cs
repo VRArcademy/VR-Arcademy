@@ -13,12 +13,13 @@
 		private float randX;
 		private float randY;
 		private float spawnRate = 1.5f;
+		private float currentTime = 0;
+		private float Timeleft = 60.0f;
 
 		public override void StartUsing(VRTK_InteractUse usingObject){
 			base.StartUsing (usingObject);
 			StartGame ();
-			if (GameManager.singleton.shootingCurState == GameManager.ShootingGameState.GameStart ) {
-				GameManager.singleton.currentTime = GameManager.singleton.Timeleft;
+			if (GameManager.singleton.shootingCurState == GameManager.ShootingGameState.GameStart) {
 				StartCoroutine (TargetTimer ());
 			}
 		}
@@ -29,6 +30,8 @@
 
 		public void StartGame(){
 			GameManager.singleton.shootingCurState = GameManager.ShootingGameState.GameStart;
+			currentTime = Timeleft;
+			currentTime -= Time.deltaTime;
 		}
 
 		public void TargetSpawner(){
@@ -44,7 +47,7 @@
 		}
 			
 		IEnumerator TargetTimer(){
-			while (GameManager.singleton.currentTime >= 0) {
+			while (currentTime>= 0 && GameManager.singleton.shootingCurState == GameManager.ShootingGameState.GameStart) {
 				TargetSpawner ();
 				yield return new WaitForSeconds (spawnRate);
 			}

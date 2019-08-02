@@ -10,29 +10,8 @@ public class GameManager : MonoBehaviour {
 		//Singleton
 		public static GameManager singleton;
 
-		//UI Control
-		public GameObject InteractBtn;
-		public GameObject ScorePlate;
-		public GameObject TimerPlate;
-		public GameObject HighScorePlate;
-
-		public string btnString;
-		public Text btnText;
-		public float fadeInTime;
-		public float dist;
-		public Transform Player;
-		TextMesh scoreText;
-		TextMesh TimerText;
-		TextMesh HighestScoreText;
-
-		public int score = 0;
-		public int highestScore = 0;
-		public float Timeleft = 60.0f;
-		public float currentTime = 0;
-
 		//GameState
 		public ShootingGameState shootingCurState;
-
 
 		public enum ShootingGameState{
 			WaitForStart,
@@ -53,48 +32,11 @@ public class GameManager : MonoBehaviour {
 
 
 		void Start () {
-			//UI Setting
-			scoreText = ScorePlate.GetComponentInChildren<TextMesh>();
-			TimerText = TimerPlate.GetComponentInChildren<TextMesh> ();
-			HighestScoreText = HighScorePlate.GetComponentInChildren<TextMesh> ();
-			btnText = InteractBtn.GetComponentInChildren<Text> ();
-			btnText.color = Color.clear;
 		}
 			
 		void Update () {
-			//BtnUI_Interaction ();
-			scoreText.text = "Score: " + score.ToString ();
-			TimerText.text = "Time: " + ((int)currentTime).ToString ();
-			HighestScoreText.text = "HigherScore: " + highestScore.ToString ();
-
-			//Method
-			GameOnStarted();
-			GameIsOver ();
-
 
 		}
-			
-		void GameOnStarted(){
-			if (shootingCurState == ShootingGameState.GameStart) {
-				currentTime -= Time.deltaTime;
-				if (currentTime <= 0) {
-					shootingCurState = ShootingGameState.Gameover;
-				}
-			}
-		}
-
-		void GameIsOver(){
-			if (shootingCurState == ShootingGameState.Gameover){
-				if (score >= highestScore) {
-					highestScore = score;
-				} else {
-					highestScore = highestScore;
-				}
-				score = 0;
-			}
-		}
-
-			
 
 		//Scene Management
 		public void LobbyToShootOnClicked(){

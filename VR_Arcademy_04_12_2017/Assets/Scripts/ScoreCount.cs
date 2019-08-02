@@ -15,7 +15,7 @@
 
 		void OnTriggerEnter(Collider other){
 			if (other.gameObject.tag == ("Bullet")) {
-				GameManager.singleton.score++;
+				ShootingManager.instance.score++;
 				Destroy (other.gameObject);
 				Destroy (gameObject);
 			}
